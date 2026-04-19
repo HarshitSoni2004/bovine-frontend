@@ -1,0 +1,98 @@
+/* ─── BREED INFO ─────────────────────────────────────────────────── */
+.breed-info-heading {
+  margin-bottom: 1.5rem;
+}
+
+.breed-info-title {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.breed-info-sub {
+  font-size: 0.8rem;
+  color: var(--text-3);
+  margin-top: 0.2rem;
+}
+
+/* Skeleton */
+.skeleton-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.skeleton-item { display: flex; flex-direction: column; gap: 0.4rem; }
+
+.skel {
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--bg-subtle) 25%, var(--border) 50%, var(--bg-subtle) 75%);
+  background-size: 600px 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.skel-label { height: 10px; width: 80px; }
+.skel-value { height: 14px; }
+.skel-value.short { width: 55%; }
+.skel-value.long  { width: 88%; }
+.skel-value.med   { width: 70%; }
+
+/* Info rows — NO heavy boxes, just clean rows */
+.info-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  animation: fadeUp 0.4s var(--ease) both;
+}
+
+.info-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 1rem;
+  padding: 0.95rem 0;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+
+.info-row:last-child { border-bottom: none; }
+
+.info-row:hover { background: transparent; }
+
+.info-row-label {
+  font-size: 0.73rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-3);
+  padding-top: 0.1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+
+.info-row-label svg { width: 13px; height: 13px; flex-shrink: 0; margin-top: 1px; }
+
+.info-row-value {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* Error */
+.breed-info-err {
+  font-size: 0.84rem;
+  color: var(--text-3);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.breed-info-err svg { width: 14px; height: 14px; color: var(--amber); }
+
+/* ─── RESPONSIVE ─────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .info-row { grid-template-columns: 1fr; gap: 0.25rem; }
+  .info-row-label { padding-top: 0; }
+}

@@ -1,0 +1,185 @@
+/* ─── APP SHELL ──────────────────────────────────────────────────── */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.4s var(--ease) both;
+}
+
+/* ─── HEADER ─────────────────────────────────────────────────────── */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  background: var(--bg-overlay);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.brand-mark {
+  width: 28px;
+  height: 28px;
+  background: var(--accent);
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-fg);
+  flex-shrink: 0;
+  transition: background 0.3s;
+}
+
+.brand-mark svg { width: 15px; height: 15px; }
+
+.brand-name {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.brand-tag {
+  font-size: 0.72rem;
+  color: var(--text-3);
+  font-weight: 400;
+  margin-left: 0.1rem;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.model-chip {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--accent);
+  background: var(--accent-mute);
+  border-radius: 20px;
+  padding: 0.25rem 0.7rem;
+  letter-spacing: 0.02em;
+}
+
+.theme-toggle {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-2);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.theme-toggle:hover {
+  background: var(--bg-subtle);
+  color: var(--text);
+}
+
+.theme-toggle svg { width: 16px; height: 16px; }
+
+/* ─── MAIN ───────────────────────────────────────────────────────── */
+.main {
+  flex: 1;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* ─── SECTION LABEL ──────────────────────────────────────────────── */
+.section-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 1.2rem;
+}
+
+/* ─── HERO ───────────────────────────────────────────────────────── */
+.hero {
+  text-align: center;
+  animation: fadeUp 0.5s var(--ease) 0.05s both;
+}
+
+.hero-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.hero-heading em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero-sub {
+  font-size: 0.95rem;
+  color: var(--text-2);
+  max-width: 380px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ─── UPLOAD SECTION ─────────────────────────────────────────────── */
+.upload-section {
+  animation: fadeUp 0.5s var(--ease) 0.12s both;
+}
+
+/* ─── DIVIDER ────────────────────────────────────────────────────── */
+.section-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0;
+}
+
+/* ─── RESULTS SECTION ────────────────────────────────────────────── */
+.results-section {
+  animation: fadeUp 0.45s var(--ease) both;
+}
+
+/* ─── BREED INFO SECTION ─────────────────────────────────────────── */
+.breed-info-section {
+  animation: fadeUp 0.45s var(--ease) 0.05s both;
+}
+
+/* ─── FOOTER ─────────────────────────────────────────────────────── */
+.footer {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  font-size: 0.76rem;
+  color: var(--text-3);
+  border-top: 1px solid var(--border);
+}
+
+/* ─── RESPONSIVE ─────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .header { padding: 0 1rem; }
+  .main { padding: 2.5rem 1rem 5rem; gap: 3rem; }
+  .brand-tag { display: none; }
+}
